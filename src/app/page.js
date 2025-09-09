@@ -1,6 +1,7 @@
 "use client";
 import Navbar from './components/Navbar/page.jsx';
 import Hero from './components/Hero/page.jsx';
+import BlogCard from './components/BlogCard/page.jsx';
 import { useEffect, useState } from 'react';
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -16,6 +17,7 @@ export default function Home() {
     <main>
       <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       <Hero isDarkMode={isDarkMode} />
+      <BlogCard isDarkMode={isDarkMode} />
     </main>
   );
 }
