@@ -2,7 +2,8 @@
 import { motion } from 'framer-motion';
 import Lottie from 'lottie-react';
 import heroAnimation from '../../animation/Man and robot with computers sitting together in workplace.json';
-import Image from 'next/image';
+import LionAnimation from '../../animation/fs_lion.json';
+import CircularText from '../../motion/CircularText';
 import { SiBmw, SiTata, SiSony, SiAmazonfiretv } from "react-icons/si";
 import { DiAndroid, DiApple } from "react-icons/di";
 import { FaAmazon, FaCcAmazonPay } from "react-icons/fa";
@@ -21,7 +22,7 @@ export default function Hero({ isDarkMode = false }) {
       x: "-50%",
       transition: {
         repeat: Infinity,
-        duration: 16,
+        duration: 20,
         ease: "linear",
         repeatType: "loop"
       }
@@ -115,20 +116,24 @@ export default function Hero({ isDarkMode = false }) {
       </div>
 
       {/* Contact Button (Bottom Right) - Uncomment if needed */}
-      {/* <div className="absolute bottom-10 right-10">
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="bg-black rounded-full p-4 shadow-lg cursor-pointer"
-        >
-          <Image
-            src="/contact-button-icon.png"
-            alt="Contact"
-            width={60}
-            height={60}
+      <div className="fixed bottom-10 right-10 z-10 flex items-center justify-center">
+        <div className="relative flex items-center justify-center" style={{ width: 140, height: 140 }}>
+          {/* Circular Rotating Text Outside, supports dark/light mode */}
+          <CircularText
+            text="contact - contact - contact - "
+            onHover="speedUp"
+            spinDuration={20}
+            isDarkMode={isDarkMode}
+            size={170}
           />
-        </motion.div>
-      </div> */}
+          {/* Lion Animation Inside */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="bg-black rounded-full" style={{ width: 100, height: 100, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Lottie animationData={LionAnimation} loop={true} style={{ width: 200, height: 200 }} />
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Bottom Left Text */}
       <div className={`absolute bottom-10 left-30 text-[15px] ${isDarkMode ? 'text-gray-300 border-e-gray-300' : 'text-gray-600 border-e-[#0a0a0a]'} border-e-2 p-6`}>

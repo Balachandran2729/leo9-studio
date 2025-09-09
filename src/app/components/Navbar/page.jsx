@@ -181,10 +181,10 @@ const handleContactHover = (isHovered) => {
           transition={{ type: "spring", stiffness: 300, damping: 20 }} // Smooth spring animation
         >
           <div>
-            <h3 className="font-extrabold text-black text-3xl mb-4">Design.</h3>
+            <h3 className="font-extrabold text-black text-3xl mb-4">{"Design."}</h3>
           </div>
           <div className='flex flex-row justify-start items-start gap-6'>
-            <p className="mt-1.5 text-sm text-gray-900 mb-3">Handcraft the user experience</p>
+            <p className="mt-1.5 text-sm text-gray-900 mb-3">{"Handcraft the user experience"}</p>
             <HiOutlineArrowLongRight className='text-black w-13 h-10' />
           </div>
         </motion.div>
@@ -199,10 +199,10 @@ const handleContactHover = (isHovered) => {
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
           <div>
-            <h3 className="font-extrabold text-black text-3xl mb-4">Technology.</h3>
+            <h3 className="font-extrabold text-black text-3xl mb-4">{"Technology."}</h3>
           </div>
           <div className='flex flex-row justify-start items-start gap-6'>
-            <p className="mt-1.5 text-sm text-gray-900 mb-3">Leverage the power of code.</p>
+            <p className="mt-1.5 text-sm text-gray-900 mb-3">{"Leverage the power of code."}</p>
             <HiOutlineArrowLongRight className='text-black w-13 h-10' />
           </div>
         </motion.div>
@@ -217,10 +217,10 @@ const handleContactHover = (isHovered) => {
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
           <div>
-            <h3 className="font-extrabold text-black text-3xl mb-4">Marketing.</h3>
+            <h3 className="font-extrabold text-black text-3xl mb-4">{"Marketing."}</h3>
           </div>
           <div className='flex flex-row justify-start items-start gap-6'>
-            <p className="mt-1.5 text-sm text-gray-900 mb-3">Creative strategies for brands.</p>
+            <p className="mt-1.5 text-sm text-gray-900 mb-3">{"Creative strategies for brands."}</p>
             <HiOutlineArrowLongRight className='text-black w-13 h-10' />
           </div>
         </motion.div>
@@ -249,10 +249,10 @@ const handleContactHover = (isHovered) => {
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     >
                     <div>
-                        <h3 className="font-extrabold text-black text-3xl mb-4">About Us.</h3>
+                        <h3 className="font-extrabold text-black text-3xl mb-4">{"About Us."}</h3>
                     </div>
                     <div className='flex flex-row justify-start items-start gap-6'>
-                        <p className="mt-1.5 text-sm text-gray-900 mb-3">We are super-efficient yet humble to serve you!</p>
+                        <p className="mt-1.5 text-sm text-gray-900 mb-3">{"We are super-efficient yet humble to serve you!"}</p>
                         <HiOutlineArrowLongRight className='text-black w-13 h-10' />
                     </div>
                     </motion.div>
@@ -265,10 +265,10 @@ const handleContactHover = (isHovered) => {
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     >
                     <div>
-                        <h3 className="font-extrabold text-black text-3xl mb-4">Team.</h3>
+                        <h3 className="font-extrabold text-black text-3xl mb-4">{"Team."}</h3>
                     </div>
                     <div className='flex flex-row justify-start items-start gap-6'>
-                        <p className="mt-1.5 text-sm text-gray-900 mb-3">We are proud of our experienced and accomplished team!</p>
+                        <p className="mt-1.5 text-sm text-gray-900 mb-3">{"We are proud of our experienced and accomplished team!"}</p>
                         <HiOutlineArrowLongRight className='text-black w-13 h-10' />
                     </div>
                     </motion.div>
@@ -283,10 +283,10 @@ const handleContactHover = (isHovered) => {
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     >
                     <div>
-                        <h3 className="font-extrabold text-black text-3xl mb-4">Career.</h3>
+                        <h3 className="font-extrabold text-black text-3xl mb-4">{"Career."}</h3>
                     </div>
                     <div className='flex flex-row justify-start items-start gap-6'>
-                        <p className="mt-1.5 text-sm text-gray-900 mb-3">Can you offer such experience?</p>
+                        <p className="mt-1.5 text-sm text-gray-900 mb-3">{"Can you offer such experience?"}</p>
                         <HiOutlineArrowLongRight className='text-black w-13 h-10' />
                     </div>
                     </motion.div>
