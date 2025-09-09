@@ -31,7 +31,6 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
     if (isOpen) setIsServicesOpen(false);
   };
 
-  // Toggle mobile menu
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -39,11 +38,8 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Navigation Bar */}
         <div className="flex justify-between h-auto items-center py-3">
-          {/* Logo */}
           <div className="flex items-center gap-3 ms-10">
-            {/* Replace with your actual logo path */}
             <Image
               src="/Leo9Logo.svg"
               alt="Leo9 Studio Logo"
@@ -53,15 +49,12 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
             <span className="text-2xl font-bold text-black font-sans">LEO9</span>
           </div>
 
-          {/* Desktop Navigation Links - Hidden on Mobile */}
           <div className="hidden md:flex items-center space-x-10 me-10">
             <a href="#" className="text-black hover:text-red-500 transition-colors duration-200 font-medium"
                 onMouseEnter={() => {handleServicesHover(false)
                     handleAboutHover(false)
                 }}
             >Work</a>
-
-            {/* Services Link with Hover */}
             <div
               className="relative"
               onMouseEnter={() => handleServicesHover(true)}
@@ -70,7 +63,6 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
                 className="text-black hover:text-red-500 transition-colors duration-200 font-medium flex items-center"
               >
                 Services
-                {/* Smooth icon transition */}
                 <span className="relative inline-block w-3.5 h-3.5 ms-1">
                   <GoDotFill className={`absolute inset-0 w-full h-full transition-all duration-200 ease-in-out ${isServicesOpen ? 'opacity-0 rotate-90 scale-75' : 'opacity-100'}`} />
                   <FaChevronDown className={`absolute inset-0 w-full h-full transition-all duration-200 ease-in-out text-red-500 ${isServicesOpen ? 'opacity-100' : 'opacity-0 -rotate-90 scale-75'}`} />
@@ -84,7 +76,6 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
                 }}
             >Clients</a>
 
-            {/* About Link with Hover */}
             <div
               className="relative"
               onMouseEnter={() => handleAboutHover(true)}
@@ -93,7 +84,6 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
                 className="text-black hover:text-red-500 transition-colors duration-200 font-medium flex items-center"
               >
                 About
-                 {/* Smooth icon transition */}
                  <span className="relative inline-block w-3.5 h-3.5 ms-1">
                   <GoDotFill className={`absolute inset-0 w-full h-full transition-all duration-200 ease-in-out ${isAboutOpen ? 'opacity-0 rotate-90 scale-75' : 'opacity-100'}`} />
                   <FaChevronDown className={`absolute inset-0 w-full h-full transition-all duration-200 ease-in-out text-red-500 ${isAboutOpen ? 'opacity-100' : 'opacity-0 -rotate-90 scale-75'}`} />
@@ -107,7 +97,6 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
                 }}
             >Knowledge</a>
 
-            {/* Theme Toggle Button with Smooth Icon Transition */}
             <button
               onClick={toggleTheme}
               className="p-2 text-4xl rounded-full text-gray-800 focus:outline-none transition-colors duration-300"
@@ -126,7 +115,6 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
               </motion.span>
             </button>
 
-            {/* Contact Button */}
             <div className="relative group">
               <a
                 href="#"
@@ -164,9 +152,7 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
             </div>
           </div>
 
-          {/* Mobile Hamburger Menu Button - Only visible on mobile */}
           <div className="md:hidden flex items-center space-x-4">
-            {/* Theme Toggle Button for Mobile */}
             <button
               onClick={toggleTheme}
               className="p-2 text-2xl rounded-full text-gray-900 focus:outline-none transition-colors duration-300"
@@ -174,8 +160,6 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
             >
               {isDarkMode ? <MdOutlineLightMode /> : <FaMoon />}
             </button>
-
-            {/* Hamburger Menu Button */}
             <button
               onClick={toggleMobileMenu}
               className="p-2 text-2xl text-black focus:outline-none"
@@ -189,19 +173,14 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
                 stroke="currentColor"
               >
                 {isMobileMenuOpen ? (
-                  /* Close Icon */
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 ) : (
-                  /* Hamburger Icon */
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 )}
               </svg>
             </button>
           </div>
         </div>
-
-        {/* Mega Menu Content Area - Appears below the main links with smooth transition */}
-        {/* Services Mega Menu */}
         <div
           className={`overflow-hidden transition-all duration-500 ease-in-out ${
             isServicesOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
@@ -211,7 +190,6 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
           {isServicesOpen && (
             <div className="py-6 border-t border-gray-100 bg-white">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                {/* Design Card */}
                 <motion.div
                   className="p-5 bg-pink-100 rounded-md transition-shadow duration-300"
                   whileHover={{
@@ -228,8 +206,6 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
                     <HiOutlineArrowLongRight className='text-black w-13 h-10' />
                   </div>
                 </motion.div>
-
-                {/* Technology Card */}
                 <motion.div
                   className="p-5 bg-blue-100 flex flex-col rounded-md transition-shadow duration-300"
                   whileHover={{
@@ -247,7 +223,6 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
                   </div>
                 </motion.div>
 
-                {/* Marketing Card */}
                 <motion.div
                   className="p-5 bg-purple-100 rounded-md transition-shadow duration-300"
                   whileHover={{
@@ -269,7 +244,6 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
           )}
         </div>
 
-        {/* About Mega Menu */}
         <div
           className={`overflow-hidden transition-all duration-500 ease-in-out ${
             isAboutOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
@@ -332,12 +306,10 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
           )}
         </div>
 
-        {/* Mobile Menu Sidebar - Slide in from left */}
         <div
           className={`fixed inset-y-0 left-0 z-50 w-64 bg-white transform transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} shadow-lg`}
           aria-labelledby="mobile-menu"
         >
-          {/* Close Button */}
           <div className="flex items-center justify-between p-4 border-b">
             <span className="text-xl font-bold text-red-500">Menu</span>
             <button
@@ -357,7 +329,6 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
             </button>
           </div>
 
-          {/* Menu Items */}
           <div className="p-4">
             <ul className="space-y-4">
               <li><a href="#" className="block text-lg font-semibold text-black">Work</a></li>
@@ -366,7 +337,6 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
                   <a href="#" className="block text-lg font-semibold text-black">Services</a>
                   <FaChevronDown className={`transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
                 </div>
-                {/* Services Dropdown */}
                 <div className={`ml-4 mt-2 space-y-2 ${isServicesOpen ? 'block' : 'hidden'}`}>
                   <a href="#" className="block p-2 rounded-md bg-pink-100 text-black">Design.</a>
                   <a href="#" className="block p-2 rounded-md bg-blue-100 text-black">Technology.</a>
@@ -379,7 +349,6 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
                   <a href="#" className="block text-lg font-semibold text-black">About</a>
                   <FaChevronDown className={`transition-transform duration-200 ${isAboutOpen ? 'rotate-180' : ''}`} />
                 </div>
-                {/* About Dropdown */}
                 <div className={`ml-4 mt-2 space-y-2 ${isAboutOpen ? 'block' : 'hidden'}`}>
                   <a href="#" className="block p-2 rounded-md bg-pink-100 text-black">About Us.</a>
                   <a href="#" className="block p-2 rounded-md bg-blue-100 text-black">Team.</a>
@@ -389,7 +358,6 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
               <li><a href="#" className="block text-lg font-semibold text-black">Knowledge</a></li>
             </ul>
 
-            {/* Contact Info */}
             <div className="mt-10 text-sm text-gray-600">
               <a href="#" className="block mb-2 text-blue-700">info@leo9studio.com</a>
               <p className="mb-1">IND:</p>

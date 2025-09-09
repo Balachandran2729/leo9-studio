@@ -7,15 +7,11 @@ import CircularText from '../../motion/CircularText';
 import { SiBmw, SiTata, SiSony, SiAmazonfiretv } from "react-icons/si";
 import { DiAndroid, DiApple } from "react-icons/di";
 import { FaAmazon, FaCcAmazonPay } from "react-icons/fa";
-
-// Accept the isDarkMode prop
 export default function Hero({ isDarkMode = false }) {
   const textVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
   };
-
-  // Variants for the client logos animation
   const logoAnimationVariants = {
     hidden: { x: 0 },
     visible: {
@@ -28,32 +24,24 @@ export default function Hero({ isDarkMode = false }) {
       }
     }
   };
-
-  // Determine text and icon colors based on theme
   const textColor = isDarkMode ? 'text-white' : 'text-gray-900';
   const subTextColor = isDarkMode ? 'text-gray-100' : 'text-gray-900';
   const iconColorClass = isDarkMode ? 'text-gray-100' : 'text-gray-900';
 
   return (
     <section className={`relative min-h-screen flex flex-col md:flex-row items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
-      {/* Main Content Container - Stacked vertically on mobile, row on desktop */}
       <div className="max-w-7xl mx-auto relative z-10 w-full flex flex-col md:flex-row items-center justify-between pt-20 md:pt-0">
         
-        {/* Left Side - Lottie Animation - Takes full width on mobile, flex-1 on desktop */}
         <div className="w-full md:w-1/2 flex justify-center mb-10 md:mb-0 md:ms-10">
           <Lottie
             animationData={heroAnimation}
             loop={true}
-            style={{ width: '100%', maxWidth: 500, height: 'auto' }} // Responsive width
+            style={{ width: '100%', maxWidth: 500, height: 'auto' }} 
           />
         </div>
 
-        {/* Right Side - Text Content and Client Logos - Scrollable on mobile */}
-        <div className="w-full md:w-1/2 flex flex-col items-center md:items-start mb-20 md:mb-0"> {/* Added mb-20 for mobile spacing before logos */}
-          
-          {/* Grouped Text Content */}
+        <div className="w-full md:w-1/2 flex flex-col items-center md:items-start mb-20 md:mb-0"> 
           <div className="w-full flex flex-col justify-end items-center md:items-start">
-            {/* Main Headline */}
             <motion.h1
               className={`text-5xl md:text-7xl font-extrabold ${textColor} leading-tight mb-6 pt-10 text-center md:text-left`}
               variants={textVariants}
@@ -81,7 +69,6 @@ export default function Hero({ isDarkMode = false }) {
           Your trusted UI UX design agency.
         </div>
       </div>
-          {/* Client Logos - Separate Div Below Text */}
           <div className="w-full mt-4">
             <div className="w-full max-w-3xl">
               <div className="overflow-hidden">
@@ -118,11 +105,8 @@ export default function Hero({ isDarkMode = false }) {
           </div>
         </div>
       </div>
-
-      {/* Contact Button (Bottom Right) - Fixed Position (Unchanged) */}
       <div className="hidden md:flex fixed bottom-10 right-10 z-10 items-center justify-center">
         <div className="relative flex items-center justify-center" style={{ width: 140, height: 140 }}>
-          {/* Circular Rotating Text Outside, supports dark/light mode */}
           <CircularText
             text="contact - contact - contact - "
             onHover="speedUp"
@@ -130,7 +114,6 @@ export default function Hero({ isDarkMode = false }) {
             isDarkMode={isDarkMode}
             size={170}
           />
-          {/* Lion Animation Inside */}
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="bg-black rounded-full" style={{ width: 100, height: 100, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Lottie animationData={LionAnimation} loop={true} style={{ width: 200, height: 200 }} />
@@ -138,8 +121,6 @@ export default function Hero({ isDarkMode = false }) {
           </div>
         </div>
       </div>
-
-      {/* Bottom Left Text - Absolute Position (Unchanged) */}
       <div className={`hidden md:flex absolute bottom-10 left-4 md:left-30 text-[15px] ${isDarkMode ? 'text-gray-300 border-e-gray-300' : 'text-gray-600 border-e-[#0a0a0a]'} border-e-2 p-2 md:p-6`}>
         Your trusted UI UX design agency.
       </div>
